@@ -1,7 +1,7 @@
-// const readline = require('readline');
+const readline = require('readline');
 // const PORT = 8080;
 // const IP = '127.0.0.1';
-// const fs = require('fs');
+ const fs = require('fs');
 // const http= require('http');
 // const url = require('url');
 // const events = require('events');
@@ -89,13 +89,16 @@
 
 console.log("started");
 
+fs.readFile('./Files/start.txt', () =>{
+    console.log('file read over');
 
-setTimeout(() => {
-    console.log("Timer callback 1");
-},0)
+    setTimeout(() => {
+        console.log("Timer callback 1");
+    },0)
 
-setImmediate(() => {
-    console.log("setImmediate callback2")
+    setImmediate(() => {
+        console.log("setImmediate callback 2")
+    })
 })
 
 console.log("completed");
